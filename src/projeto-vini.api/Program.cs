@@ -1,7 +1,8 @@
 using Microsoft.OpenApi;
-using projeto_vini.api;
 using projeto_vini.api.Data;
+using projeto_vini.api.IRepository;
 using projeto_vini.api.IServices;
+using projeto_vini.api.Repository;
 using projeto_vini.api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,8 +27,9 @@ builder.Services.AddSwaggerGen(options =>
   });
 });
 
-builder.Services.AddScoped<ICidadeService, CidadeService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<ICidadeService, CidadeService>();
+builder.Services.AddScoped<IPaisRepository, PaisRepository>();
 
 var app = builder.Build();
 

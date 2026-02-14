@@ -1,4 +1,4 @@
-﻿namespace projeto_vini.api
+﻿namespace projeto_vini.api.IRepository
 {
   public interface IUnitOfWork : IDisposable
   {
