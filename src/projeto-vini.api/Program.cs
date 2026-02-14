@@ -1,4 +1,5 @@
 using Microsoft.OpenApi;
+using projeto_vini.api;
 using projeto_vini.api.Data;
 using projeto_vini.api.IServices;
 using projeto_vini.api.Services;
@@ -26,6 +27,7 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 builder.Services.AddScoped<ICidadeService, CidadeService>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 
